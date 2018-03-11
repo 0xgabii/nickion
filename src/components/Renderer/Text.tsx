@@ -1,21 +1,24 @@
 import * as React from 'react';
 
 interface Props {
-  x: number;
-  y: number;
+  x?: string | number;
+  y?: string | number;
+  dx?: string | number;
+  dy?: string | number;
+
+  textLength?: string | number;
+
+  textAnchor?: 'start' | 'middle' | 'end';
+  alignmentBaseline?: 'baseline' | 'middle' | 'central' | 'hanging';
+
+  style?: object;
+
   text?: string;
 }
 
-const Text: React.SFC<Props> = ({
-  x,
-  y,
-  text,
-}) => (
-  <text
-    x={x}
-    y={y}
-  >
-    {text}
+const Text: React.SFC<Props> = (props) => (
+  <text {...props}>
+    {props.text}
   </text>  
 );
 

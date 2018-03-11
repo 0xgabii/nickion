@@ -1,24 +1,20 @@
 import * as React from 'react';
 
 interface Props {
-  width?: number;
-  height?: number;
+  width?: string | number;
+  height?: string | number;
+
   children?: React.ReactNode;
 }
 
-const Container: React.SFC<Props> = ({
-  width,
-  height,
-  children
-}) => (
+const Container: React.SFC<Props> = (props) => (
   <svg
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
-    
-    width={width}
-    height={height}
+
+    {...props}
   >
-    {children}
+    {props.children}
   </svg>
 );
 
