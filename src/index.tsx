@@ -9,3 +9,8 @@ ReactDOM.render(
   document.getElementById('root') as HTMLElement
 );
 registerServiceWorker();
+
+// tslint:disable
+if (module['hot']) {
+  module['hot'].accept();
+}
